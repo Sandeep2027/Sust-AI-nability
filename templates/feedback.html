@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback</title>
+    <style>
+        /* General Styles for the Page */
+        body {
+            font-family: 'Arial', sans-serif; /* Modern and readable font */
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9; /* Light background color for the page */
+            color: #333; /* Dark color for the text */
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #4CAF50; /* Consistent green color for the header */
+            padding: 15px;
+            color: white;
+            text-align: center;
+        }
+
+        /* Navigation Styling */
+        nav ul {
+            list-style-type: none; /* Remove default list styling */
+            padding: 0;
+            margin: 0;
+            text-align: center; /* Center the navigation links */
+        }
+
+        nav ul li {
+            display: inline-block; /* Make the navigation items horizontal */
+            margin: 0 15px; /* Add spacing between the links */
+        }
+
+        nav ul li a {
+            color: white; /* White text for the links */
+            text-decoration: none; /* Remove the underline */
+            font-size: 1.1rem; /* Slightly larger font for links */
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline; /* Add underline effect on hover */
+        }
+
+        /* Feedback Section Styling */
+        .feedback {
+            max-width: 800px; /* Limit the width of the feedback section */
+            margin: 40px auto; /* Center the section on the page */
+            padding: 20px;
+            background-color: #fff; /* White background for the form */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle box-shadow for depth */
+        }
+
+        .feedback h2 {
+            text-align: center; /* Center the heading */
+            color: #4CAF50; /* Green color for the heading */
+            font-size: 2rem; /* Larger font size for the title */
+        }
+
+        /* Form Styling */
+        form {
+            display: flex;
+            flex-direction: column; /* Stack form elements vertically */
+            gap: 15px; /* Space between form fields */
+        }
+
+        label {
+            font-size: 1rem; /* Label font size */
+            margin-bottom: 5px; /* Space between label and input field */
+            color: #333; /* Dark color for the label text */
+        }
+
+        input, textarea {
+            padding: 10px;
+            font-size: 1rem;
+            border: 2px solid #ddd; /* Light gray border for the input fields */
+            border-radius: 5px; /* Rounded corners for input fields */
+            margin-bottom: 15px; /* Space below each field */
+            width: 100%; /* Make the inputs full width */
+            box-sizing: border-box; /* Include padding in the width calculation */
+        }
+
+        textarea {
+            resize: vertical; /* Allow vertical resizing of the textarea */
+            height: 150px; /* Set a minimum height for the textarea */
+        }
+
+        button {
+            padding: 12px;
+            background-color: #4CAF50; /* Green background for the button */
+            color: white;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease; /* Smooth background transition */
+        }
+
+        button:hover {
+            background-color: #45a049; /* Slightly darker green on hover */
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: #4CAF50; /* Green footer matching the header */
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Responsive Design for Mobile Devices */
+        @media (max-width: 768px) {
+            .feedback {
+                width: 90%; /* Allow the feedback section to occupy more space on smaller screens */
+            }
+
+            nav ul li {
+                display: block; /* Stack the navigation links vertically */
+                margin: 10px 0; /* Add space between the links */
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/inventory">Inventory</a></li>
+                <li><a href="/feedback">Feedback</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/admin_login">Admin</a></li>
+                <li><a href="/chatbot">Chatbot</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Feedback Section -->
+    <section class="feedback">
+        <h2>Give Your Feedback</h2>
+        <form method="POST" id="feedback-form">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="feedback">Feedback</label>
+            <textarea id="feedback" name="feedback" required></textarea>
+
+            <button type="submit">Submit Feedback</button>
+        </form>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 Food Waste Management. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Form Submission Handling (for demonstration) -->
+    <script>
+        document.getElementById('feedback-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your feedback!'); // Placeholder for feedback submission action
+        });
+    </script>
+</body>
+</html>

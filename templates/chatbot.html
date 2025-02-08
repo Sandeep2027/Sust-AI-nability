@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <style>
+        /* General Page Styling */
+        body {
+            font-family: 'Arial', sans-serif; /* Using Arial for clean and modern font */
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5; /* Light gray background for the page */
+            color: #333; /* Darker text color for better readability */
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #4CAF50; /* Green header to match the theme */
+            padding: 15px;
+            color: white;
+            text-align: center; /* Centering text for a balanced look */
+            font-size: 2rem; /* Larger font size for emphasis */
+        }
+
+        /* Container for main chat area */
+        .container {
+            width: 80%;
+            max-width: 1200px; /* Limiting max width for better control */
+            margin: 20px auto; /* Center the container */
+            padding: 20px;
+            background-color: #fff; /* White background for clean content area */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+        }
+
+        /* Chatbox Styling */
+        .chatbox {
+            background-color: #e9e9e9; /* Light gray background for the chat area */
+            padding: 20px;
+            border-radius: 8px;
+            height: 400px;
+            overflow-y: scroll; /* Scrollable chat box */
+            margin-bottom: 20px;
+            box-sizing: border-box; /* To include padding in height calculation */
+        }
+
+        /* Styling for User's messages */
+        .user-message, .bot-message {
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            max-width: 80%;
+        }
+
+        /* User message specific styles */
+        .user-message {
+            background-color: #4CAF50; /* Green background for user's message */
+            color: white; /* White text for contrast */
+            align-self: flex-end; /* Align user message to the right */
+        }
+
+        /* Bot message specific styles */
+        .bot-message {
+            background-color: #f1f1f1; /* Light gray background for bot's message */
+            color: #333; /* Dark text for contrast */
+            align-self: flex-start; /* Align bot message to the left */
+        }
+
+        /* Input container for user input area */
+        .input-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 20px; /* Add some space between chatbox and input area */
+        }
+
+        /* Input field for user messages */
+        .input-container input {
+            width: 80%; /* Occupy most of the space */
+            padding: 10px;
+            border: 2px solid #ddd; /* Light border */
+            border-radius: 5px;
+            font-size: 16px; /* Increase font size for better typing experience */
+        }
+
+        /* Send button styling */
+        .input-container button {
+            padding: 10px 15px;
+            background-color: #4CAF50; /* Green button matching the theme */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px; /* Consistent font size */
+        }
+
+        /* Button hover effect */
+        .input-container button:hover {
+            background-color: #45a049; /* Slightly darker green on hover */
+        }
+
+        /* Link to go back to inventory page */
+        a {
+            display: block;
+            margin-top: 20px;
+            text-align: center;
+            font-size: 16px;
+            color: #4CAF50; /* Matching the theme color */
+            text-decoration: none; /* Remove underline */
+        }
+
+        /* Change link color on hover */
+        a:hover {
+            color: #45a049; /* Slightly darker green on hover */
+        }
+
+        /* Footer Styling */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #4CAF50; /* Green background for footer */
+            color: white;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .input-container {
+                flex-direction: column; /* Stack input and button vertically on small screens */
+                align-items: stretch; /* Stretch elements to fill container */
+            }
+
+            .input-container input, .input-container button {
+                width: 100%; /* Make input and button full width on small screens */
+                margin-bottom: 10px; /* Space between input and button */
+            }
+
+            .chatbox {
+                height: 300px; /* Reduce chatbox height for mobile view */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Waste Wise Chatbot</h1> <!-- Main title of the page -->
+    </header>
+
+    <!-- Main Chat Container -->
+    <div class="container">
+        <!-- Chatbox where the conversation happens -->
+        <div class="chatbox">
+            <!-- Dynamically rendered chat messages -->
+            {% if response %}
+            <div class="bot-message">{{ response }}</div> <!-- Bot's response will appear here -->
+            {% endif %}
+        </div>
+
+        <!-- User Input Form -->
+        <form method="POST" action="/chatbot" class="input-container">
+            <input type="text" name="user_input" placeholder="Ask me something..." required> <!-- Input field for user messages -->
+            <button type="submit">Send</button> <!-- Send button -->
+        </form>
+
+        <!-- Link to go back to inventory page -->
+        <a href="/inventory">Back to Inventory</a>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 Waste Wise Chatbot. All rights reserved.</p> <!-- Copyright information -->
+    </footer>
+
+</body>
+</html>

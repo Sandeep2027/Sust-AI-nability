@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        /* General Styling for the Page */
+        body {
+            font-family: 'Arial', sans-serif; /* Clean and modern font */
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5; /* Light background color for contrast */
+            color: #333; /* Dark text color for readability */
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #4CAF50; /* Green header for theme consistency */
+            padding: 15px;
+            color: white;
+            text-align: center;
+        }
+
+        /* Navigation Styling */
+        nav ul {
+            list-style-type: none; /* Removing default list bullets */
+            padding: 0;
+            margin: 0;
+            text-align: center; /* Center-aligning the navigation */
+        }
+
+        nav ul li {
+            display: inline-block; /* Making the navigation items horizontal */
+            margin: 0 15px; /* Space between links */
+        }
+
+        nav ul li a {
+            color: white; /* White text for links */
+            text-decoration: none; /* Removing underlines */
+            font-size: 1.1rem; /* Slightly larger font for links */
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline; /* Underline on hover for better interactivity */
+        }
+
+        /* Contact Section Styling */
+        .contact {
+            max-width: 800px; /* Limit the width for better alignment */
+            margin: 40px auto; /* Center-align the section */
+            padding: 20px;
+            background-color: #fff; /* White background for form section */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adding depth with box-shadow */
+        }
+
+        .contact h2 {
+            text-align: center; /* Center the heading */
+            color: #4CAF50; /* Green color to match the theme */
+            font-size: 2rem; /* Larger font for heading */
+        }
+
+        /* Form Styling */
+        form {
+            display: flex;
+            flex-direction: column; /* Stack form fields vertically */
+            gap: 15px; /* Space between form fields */
+        }
+
+        label {
+            font-size: 1rem; /* Font size for labels */
+            margin-bottom: 5px; /* Space between label and input */
+            color: #333; /* Dark color for labels */
+        }
+
+        input, textarea {
+            padding: 10px;
+            font-size: 1rem;
+            border: 2px solid #ddd; /* Light border color */
+            border-radius: 5px; /* Rounded corners */
+            margin-bottom: 15px; /* Space below each input */
+            width: 100%; /* Make inputs full width */
+            box-sizing: border-box; /* Include padding in width calculation */
+        }
+
+        textarea {
+            resize: vertical; /* Allow vertical resizing of textarea */
+            height: 150px; /* Set a minimum height for the textarea */
+        }
+
+        button {
+            padding: 12px;
+            background-color: #4CAF50; /* Green background for button */
+            color: white;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease; /* Smooth transition on hover */
+        }
+
+        button:hover {
+            background-color: #45a049; /* Slightly darker green on hover */
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: #4CAF50; /* Green footer to match theme */
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Responsive Design for Small Screens */
+        @media (max-width: 768px) {
+            .contact {
+                width: 90%; /* Allow more space on smaller screens */
+            }
+
+            nav ul li {
+                display: block; /* Stack the navigation links vertically */
+                margin: 10px 0; /* Add space between the items */
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/inventory">Inventory</a></li>
+                <li><a href="/feedback">Feedback</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/admin_login">Admin</a></li>
+                <li><a href="/chatbot">Chatbot</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Contact Form Section -->
+    <section class="contact">
+        <h2>Contact Us</h2>
+        <form method="POST" id="contact-form">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 Food Waste Management. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Contact Form Submission Handling -->
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Message sent!'); // Placeholder for form submission action
+        });
+    </script>
+</body>
+</html>
