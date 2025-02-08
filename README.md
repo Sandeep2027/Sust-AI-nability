@@ -1,4 +1,4 @@
-Simple Instructions for Running the Project:
+ Instructions for Running the Project:
 
 Set up the environment: 
 Make sure you have Python installed (preferably Python 3.x).
